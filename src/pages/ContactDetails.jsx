@@ -2,18 +2,25 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { get } from "../data/httpClient";
 import { getContactImg } from "../utils/getContactImg";
-import placeholder from '../img/3973421.png';
 
 export function ContactDetails() {
   const { userId } = useParams();
-  const [user, setUser] = useState({});
-  const imageUrl = getContactImg(user.path, 200);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
-    get(`/users/${userId}`).then((data) => {
-      setUser(data);
+    get().then((users) => {
+      const foundUser = users.find((user) => user.id === Number(userId));
+      setUser(foundUser);
+    }).catch((error) => {
+      console.error(error);
     });
   }, [userId]);
+
+  if (!user) {
+    return <div>Loading...</div>;
+  }
+
+  const imageUrl = getContactImg(user.avatar, 200);
 
   return (
     <div>
@@ -22,6 +29,14 @@ export function ContactDetails() {
         <p>
           <strong>Name: </strong>
           {user.name}
+        </p>
+        <p>
+          <strong>Phone: </strong>
+          {user.phone}
+        </p>
+        <p>
+          <strong>Email: </strong>
+          {user.email}
         </p>
       </div>
     </div>

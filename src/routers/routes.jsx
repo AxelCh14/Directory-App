@@ -7,7 +7,7 @@ export function MyRoutes() {
     <Router>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
-        <Route exact path="/Details/:userId" element={<ContactDetails />} />
+        <Route path="/Details/:userId" element={<ContactDetails />}/>
       </Routes>
     </Router>
   );

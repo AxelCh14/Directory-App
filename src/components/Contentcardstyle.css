@@ -43,3 +43,9 @@
     border-radius: 50%;
     background-color: azure;
 }
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
