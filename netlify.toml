@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "public"
+  publish = "index.html"
 
 [build.environment]
   NODE_VERSION = "18.16.0"
