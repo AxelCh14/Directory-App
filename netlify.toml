@@ -1,6 +1,5 @@
 [build]
   command = "npm run build"
-  publish = "Directory App"
 
 [build.environment]
   NODE_VERSION = "18.16.0"
