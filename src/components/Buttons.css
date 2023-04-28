@@ -68,19 +68,3 @@
   .button.outline.secondary:hover {
     color: #fff;
   }
-
-
-  .alias-input {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .show-input {
-    opacity: 1;
-  }
-  
-  .hide-input {
-    opacity: 0;
-  }
-  
-  
