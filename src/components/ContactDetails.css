@@ -1,0 +1,26 @@
+.contact-card {
+    max-width: 230px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 13px 27px -5px #26264640;
+  }
+  
+  .contact-image {
+    width: 100%;
+    max-width: 200px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-info {
+    margin-top: 10px;
+    text-align: center;
+  }
+  

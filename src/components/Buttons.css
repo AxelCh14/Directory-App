@@ -1,0 +1,86 @@
+.button {
+    background-color: #50a3a2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .button:hover {
+    background-color: #3e8887;
+  }
+  
+  .button:active {
+    transform: scale(0.95);
+  }
+  
+  .button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .button.primary {
+    background-color: #f44336;
+  }
+  
+  .button.primary:hover {
+    background-color: #d32f2f;
+  }
+  
+  .button.secondary {
+    background-color: #039be5;
+  }
+  
+  .button.secondary:hover {
+    background-color: #0277bd;
+  }
+  
+  .button.outline {
+    background-color: transparent;
+    color: #50a3a2;
+    border: 1px solid #50a3a2;
+  }
+  
+  .button.outline:hover {
+    background-color: #50a3a2;
+    color: #fff;
+  }
+  
+  .button.outline.primary {
+    color: #f44336;
+    border-color: #f44336;
+  }
+  
+  .button.outline.primary:hover {
+    color: #fff;
+  }
+  
+  .button.outline.secondary {
+    color: #039be5;
+    border-color: #039be5;
+  }
+  
+  .button.outline.secondary:hover {
+    color: #fff;
+  }
+
+
+  .alias-input {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .show-input {
+    opacity: 1;
+  }
+  
+  .hide-input {
+    opacity: 0;
+  }
+  
+  
