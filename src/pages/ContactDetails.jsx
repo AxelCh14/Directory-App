@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { get } from "../data/httpClient";
 import { getContactImg } from "../utils/getContactImg";
-import { useSpring, animated } from "react-spring";
 import "../components/Buttons.css";
 
 import "../components/ContactDetails.css";
@@ -27,13 +26,15 @@ export function ContactDetails() {
   const handleAliasChange = () => {
     setUser({ ...user, name: `${user.name} (${alias})` });
     setAlias("");
+    setShowInput(true);
+  };
+  
+  const handleCancel = () => {
+    setAlias("");
     setShowInput(false);
   };
 
-  const inputAnimation = useSpring({
-    width: showInput ? "100%" : "0%",
-    opacity: showInput ? 1 : 0,
-  });
+
 
   if (!user) {
     return <div>Loading...</div>;
@@ -59,22 +60,22 @@ export function ContactDetails() {
         </p>
 
         <div>
-          <button className="button" onClick={() => setShowInput(true)}>
-            Add Alias
-          </button>
-          <animated.input
-            type="text"
-            value={alias}
-            onChange={(e) => setAlias(e.target.value)}
-            placeholder="Alias"
-            style={inputAnimation}
-          />
-          {showInput && (
-            <button className="button" onClick={handleAliasChange}>
-              Save Alias
-            </button>
-          )}
-        </div>
+  {showInput ? (
+    <>
+      <button className="button" onClick={handleCancel}>
+        Cancel
+      </button>
+      
+      <button className="button" onClick={handleAliasChange}>
+        Save Alias
+      </button>
+    </>
+  ) : (
+    <button className="button" onClick={() => setShowInput(true)}>
+      Add Alias
+    </button>
+  )}
+</div>
       </div>
     </div>
   );
