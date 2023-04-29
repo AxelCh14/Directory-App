@@ -83,7 +83,7 @@
     margin-right: 10px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-    max-width: 230px;
+    max-width: 100%;
   }
   
   .button {
@@ -99,5 +99,5 @@
   
   .input-field.show-input {
     opacity: 1;
-    max-width: 230px;
+    max-width: 100%;
   }
