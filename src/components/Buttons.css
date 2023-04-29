@@ -9,6 +9,12 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     outline: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+
+
   }
   
   .button:hover {
@@ -67,4 +73,29 @@
   
   .button.outline.secondary:hover {
     color: #fff;
+  }
+
+  .input-field {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .button {
+    margin-right: 10px;
+    margin-top: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .button.show-input {
+    opacity: 0;
+  }
+  
+  .input-field.show-input {
+    opacity: 1;
   }

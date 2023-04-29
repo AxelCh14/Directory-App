@@ -26,15 +26,13 @@ export function ContactDetails() {
   const handleAliasChange = () => {
     setUser({ ...user, name: `${user.name} (${alias})` });
     setAlias("");
-    setShowInput(true);
+    setShowInput(false);
   };
   
   const handleCancel = () => {
     setAlias("");
     setShowInput(false);
   };
-
-
 
   if (!user) {
     return <div>Loading...</div>;
@@ -60,22 +58,28 @@ export function ContactDetails() {
         </p>
 
         <div>
-  {showInput ? (
-    <>
-      <button className="button" onClick={handleCancel}>
-        Cancel
-      </button>
-      
-      <button className="button" onClick={handleAliasChange}>
-        Save Alias
-      </button>
-    </>
-  ) : (
-    <button className="button" onClick={() => setShowInput(true)}>
-      Add Alias
-    </button>
-  )}
-</div>
+          {showInput ? (
+            <>
+              <input
+                type="text"
+                placeholder="Enter Alias"
+                value={alias}
+                onChange={(e) => setAlias(e.target.value)}
+                className="input-field"
+              />
+              <button className="button" onClick={handleCancel}>
+                Cancel
+              </button>
+              <button className="button" onClick={handleAliasChange}>
+                Save Alias
+              </button>
+            </>
+          ) : (
+            <button className="button" onClick={() => setShowInput(true)}>
+              Add Alias
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
