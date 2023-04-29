@@ -83,6 +83,7 @@
     margin-right: 10px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+    max-width: 560px;
   }
   
   .button {
