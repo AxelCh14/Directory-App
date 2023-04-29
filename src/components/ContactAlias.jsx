@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "../components/Buttons.css";
+import "../components/ContactDetails.css";
+import "../components/CardStyle.css";
+
 
 export function ContactAlias({ user, onSave }) {
   const [alias, setAlias] = useState("");
