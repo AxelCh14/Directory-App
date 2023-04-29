@@ -13,7 +13,7 @@ function App() {
 
   return (
     <Container fluid>
-      <Navbar className="my-navbar" bg="light" expand="lg">
+      <Navbar className="my-navbar" bg="light" expand="50%">
         <Navbar.Brand href="#home">
           <MenuIcon
             className="menu-icon"
