@@ -18,3 +18,22 @@ export async function get() {
     throw new Error('Error fetching data from server');
   }
 }
+
+export async function post(user) {
+  try {
+    const response = await fetch(API, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error('Error adding user');
+  }
+}
+
+
