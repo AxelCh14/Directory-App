@@ -80,14 +80,13 @@
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-right: 10px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-    max-width: 100%;
+    max-width: 260px;
   }
   
   .button {
-    margin-right: 10px;
+    margin: 10px;
     margin-top: 10px;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -99,4 +98,10 @@
   
   .input-field.show-input {
     opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .input-field {
+      max-width: 100%;
+    }
   }
