@@ -5,7 +5,6 @@
   color: #68d19d;
 }
 
-
 .my-navbar {
   position: sticky;
   top: 0;
@@ -14,6 +13,7 @@
 
 .navbar-toggler {
   border: none;
+  margin-right: 0;
 }
 
 .nav-link {
@@ -47,6 +47,7 @@
     left: -100%;
     background-color: #f8f9fa;
     transition: all 0.3s ease-in-out;
+    z-index: 1;
   }
 
   .navbar-collapse.show {
