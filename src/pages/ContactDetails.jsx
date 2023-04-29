@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { get } from "../data/httpClient";
-import { getContactImg } from "../utils/getContactImg";
-import "../components/Buttons.css";
+import { ContactImage } from "../components/ContactImage";
+import { ContactInfoItem } from "../components/ContactInfoItem";
+import { ContactAlias } from "../components/ContactAlias";
+import { Loading } from "../components/Loading";
 
+import "../components/Buttons.css";
 import "../components/ContactDetails.css";
 
 export function ContactDetails() {
   const { userId } = useParams();
   const [user, setUser] = useState(null);
-  const [alias, setAlias] = useState("");
-  const [showInput, setShowInput] = useState(false);
 
   useEffect(() => {
     get()
@@ -23,63 +24,22 @@ export function ContactDetails() {
       });
   }, [userId]);
 
-  const handleAliasChange = () => {
-    setUser({ ...user, name: `${user.name} (${alias})` });
-    setAlias("");
-    setShowInput(false);
-  };
-  
-  const handleCancel = () => {
-    setAlias("");
-    setShowInput(false);
+  const handleSaveAlias = (newUser) => {
+    setUser(newUser);
   };
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <Loading message="Loading..." />;
   }
-
-  const imageUrl = getContactImg(user.avatar, 200);
 
   return (
     <div className="contact-card">
-      <img src={imageUrl} alt={user.name} className="contact-image" />
+      <ContactImage avatar={user.avatar} size={200} />
       <div className="contact-info">
-        <p>
-          <strong>Name: </strong>
-          {user.name}
-        </p>
-        <p>
-          <strong>Phone: </strong>
-          {user.phone}
-        </p>
-        <p>
-          <strong>Email: </strong>
-          {user.email}
-        </p>
-
-        <div>
-          {showInput ? (
-            <>
-              <input
-                type="text"
-                placeholder="Enter Alias"
-                value={alias}
-                onChange={(e) => setAlias(e.target.value)}
-                className="input-field"
-              />
-              <button className="button" onClick={handleCancel}>
-                Cancel
-              </button>
-              <button className="button" onClick={handleAliasChange}>
-                Save Alias
-              </button>
-            </>
-          ) : (
-            <button className="button" onClick={() => setShowInput(true)}>
-              Add Alias
-            </button>
-          )}
-        </div>
+        <ContactInfoItem label="Name" value={user.name} />
+        <ContactInfoItem label="Phone" value={user.phone} />
+        <ContactInfoItem label="Email" value={user.email} />
+        <ContactAlias user={user} onSave={handleSaveAlias} />
       </div>
     </div>
   );
