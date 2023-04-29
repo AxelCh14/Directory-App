@@ -34,7 +34,7 @@
   justify-content: flex-end;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 560px) {
   .navbar-toggler {
     margin-right: 0;
   }
@@ -69,5 +69,11 @@
   .nav-link:hover,
   .nav-link:focus {
     background-color: #dee2e6;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar-collapse {
+    max-width: 100vw;
   }
 }
