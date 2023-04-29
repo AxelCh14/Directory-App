@@ -23,8 +23,8 @@ export function ContactAlias({ user, onSave }) {
   return (
     <div>
       {showInput ? (
-        <>
-          <input
+        <div >
+          <input 
             type="text"
             placeholder="Enter Alias"
             value={alias}
@@ -37,7 +37,7 @@ export function ContactAlias({ user, onSave }) {
           <button className="button" onClick={handleAliasChange}>
             Save Alias
           </button>
-        </>
+        </div>
       ) : (
         <button className="button" onClick={() => setShowInput(true)}>
           Add Alias

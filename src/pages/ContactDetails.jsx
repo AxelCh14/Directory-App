@@ -7,7 +7,7 @@ import { ContactAlias } from "../components/ContactAlias";
 import { Loading } from "../components/Loading";
 
 import "../components/Buttons.css";
-import "../components/ContactDetails.css";
+import "../components/CardStyle.css";
 
 export function ContactDetails() {
   const { userId } = useParams();
