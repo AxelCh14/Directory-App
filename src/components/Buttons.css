@@ -5,7 +5,7 @@
     border-radius: 5px;
     font-size: 13px;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 5px 10px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     outline: none;
@@ -73,22 +73,17 @@
   }
 
   .input-field {
-    padding: 10px;
-    font-size: 16px;
+    padding: 5px;
+    font-size: 13px;
     border-radius: 5px;
     border: 1px solid #ccc;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-    max-width: 210px;
     margin-top: 10px;
   }
   
   .button.show-input {
     opacity: 0;
-  }
-  
-  .input-field.show-input {
-    opacity: 1;
   }
 
   @media (max-width: 768px) {
