@@ -17,31 +17,10 @@
     }
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    max-width: 230px;
-    margin: auto;
-    padding: 20px;
-    transition: 0.5s;
-    box-shadow: 0 13px 27px -5px #26264640;
-    height: 100%;
-}
-
 .card:hover {
     opacity: 0.5;
     transform: translateY(-15px);
     transition: 0.5s;
-}
-
-.avatar {
-    border-radius: 50%;
-    background-color: azure;
 }
 
 .card-link {
