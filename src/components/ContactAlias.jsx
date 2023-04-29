@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "../components/Buttons.css";
-import "../components/ContactDetails.css";
 import "../components/CardStyle.css";
 
 
