@@ -34,7 +34,7 @@ export function ContactDetails() {
 
   return (
     <div className="contact-card">
-      <ContactImage avatar={user.avatar} size={200} />
+      <ContactImage avatar={user.name} size={200} />
       <div className="contact-info">
         <ContactInfoItem label="Name" value={user.name} />
         <ContactInfoItem label="Phone" value={user.phone} />
