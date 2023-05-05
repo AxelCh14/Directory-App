@@ -1,8 +1,9 @@
 import { MyRoutes } from "./routers/routes";
+import "../src/App.css"
 
 function App() {
   return (
-    <div>
+    <div className="body">
       <MyRoutes />
     </div>
   );

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { get } from '../data/httpClient';
 import { Card } from './Card';
-import { AddUserForm } from './AddUserForm';
 import "../components/Contentcardstyle.css"
 
 export function ContentCard() {
@@ -15,9 +14,6 @@ export function ContentCard() {
     });
   }, []);
 
-  const handleAddUser = (newUser) => {
-    setUsers((prevUsers) => [...prevUsers, newUser]);
-  };
 
   return (
     <>
@@ -26,7 +22,6 @@ export function ContentCard() {
           <Card key={user.id} user={user} />
         ))}
       </ul>
-      <AddUserForm onAdd={handleAddUser} />
 
     </>
   );

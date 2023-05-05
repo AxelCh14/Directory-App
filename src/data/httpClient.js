@@ -1,5 +1,5 @@
 const API = 'https://jsonplaceholder.typicode.com/users';
-const IMG_API = 'https://joesch.moe/api/v1/random';
+const AVATAR_API = 'https://ui-avatars.com/api/';
 
 export async function get() {
   try {
@@ -10,7 +10,7 @@ export async function get() {
       name: user.name,
       phone: user.phone,
       email: user.email,
-      avatar: `${IMG_API}?=${user.id}`,
+      avatar: `${AVATAR_API}?name=${user.name}`,
     }));
     return usersWithAvatars;
   } catch (error) {
@@ -35,5 +35,3 @@ export async function post(user) {
     throw new Error('Error adding user');
   }
 }
-
-
